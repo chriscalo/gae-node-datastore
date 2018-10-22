@@ -83,9 +83,14 @@ app.get('/', (req, res, next) => {
 
 const listener = app.listen(process.env.PORT || 0, () => {
   const PORT = listener.address().port;
-  const ADDRESS = `http://localhost:${PORT}`;
-  console.log(`Running at ${ADDRESS}`);
-  console.log('Press Ctrl+C to quit.');
+  const PRODUCTION = process.env["NODE_ENV"] === "production";
+  if (!PRODUCTION) {
+    const opn = require("opn");
+    const ADDRESS = `http://localhost:${PORT}`;
+    console.log(`Running app at ${ADDRESS}`);
+    console.log("Press Ctrl+C to quit.");
+    opn(ADDRESS);
+  }
 });
 // [END gae_flex_datastore_app]
 

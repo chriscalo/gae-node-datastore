@@ -1,7 +1,7 @@
 {
   "name": "gae-node-datastore",
   "version": "0.0.0",
-  "description": "An example repo of Node on Google App Engine Standard with Datastore (plus local emulator)",
+  "description": "An example repo of a Node app running on Google App Engine Standard with Datastore (including the local emulator)",
   "main": "app.js",
   "repository": "https://github.com/chriscalo/gae-node-datastore.git",
   "author": "Chris Calo <chris.calo@gmail.com>",

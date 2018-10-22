@@ -14,20 +14,20 @@
  */
 
 // [START gae_flex_datastore_app]
-'use strict';
+"use strict";
 
-const express = require('express');
-const crypto = require('crypto');
+const express = require("express");
+const crypto = require("crypto");
 
 const app = express();
-app.enable('trust proxy');
+app.enable("trust proxy");
 
 // By default, the client will authenticate using the service account file
 // specified by the GOOGLE_APPLICATION_CREDENTIALS environment variable and use
 // the project specified by the GOOGLE_CLOUD_PROJECT environment variable. See
 // https://github.com/GoogleCloudPlatform/google-cloud-node/blob/master/docs/authentication.md
 // These environment variables are set automatically on Google App Engine
-const Datastore = require('@google-cloud/datastore');
+const Datastore = require("@google-cloud/datastore");
 
 // Instantiate a datastore client
 const datastore = Datastore();
@@ -39,7 +39,7 @@ const datastore = Datastore();
  */
 function insertVisit (visit) {
   return datastore.save({
-    key: datastore.key('visit'),
+    key: datastore.key("visit"),
     data: visit
   });
 }
@@ -48,8 +48,8 @@ function insertVisit (visit) {
  * Retrieve the latest 10 visit records from the database.
  */
 function getVisits () {
-  const query = datastore.createQuery('visit')
-    .order('timestamp', { descending: true })
+  const query = datastore.createQuery("visit")
+    .order("timestamp", { descending: true })
     .limit(10);
   
   return datastore.runQuery(query)
@@ -64,7 +64,7 @@ app.get('/', (req, res, next) => {
   const visit = {
     timestamp: new Date(),
     // Store a hash of the visitor's ip address
-    userIp: crypto.createHash('sha256').update(req.ip).digest('hex').substr(0, 7)
+    userIp: crypto.createHash("sha256").update(req.ip).digest("hex").substr(0, 7)
   };
 
   insertVisit(visit)
@@ -73,8 +73,8 @@ app.get('/', (req, res, next) => {
     .then((visits) => {
       res
         .status(200)
-        .set('Content-Type', 'text/plain')
-        .send(`Last 10 visits:\n${visits.join('\n')}`)
+        .set("Content-Type", "text/plain")
+        .send(`Last 10 visits:\n${visits.join("\n")}`)
         .end();
     })
     .catch(next);

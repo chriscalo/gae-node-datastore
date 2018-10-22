@@ -1,8 +1,8 @@
 # gae-node-datastore
 
-This repo is an example of how to get Node running on Google App Engine
-Standard with Datastore, not only deployed to production, but also in a local
-development environment.
+An example repo of a Node app running on Google App Engine Standard with
+Datastore (including the local emulator). This repo was tested to work both in
+production and in a local development environment.
 
 ## Local development
 

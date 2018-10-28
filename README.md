@@ -70,24 +70,45 @@ the method I recommend for the simplest, most reliable installation on a Mac:
 2. Run `yarn` to install dependencies.
 3. Run `gcloud components install cloud-datastore-emulator` to install the local
    Datastore emulator.
+4. Run `chmod +x ./scripts/*` to ensure everything in the `scripts` directory is executable.
 
 ### Run the local server
 
-1. Run `yarn run dev:datastore`. Before proceeding, look for the following text
-   in the output because the next step depends on the server being up and
-   running:
+1. Start the local Datastore emulator:
+   
+   ```sh
+   yarn run dev:datastore
+   ```
+   
+   Before proceeding, look for the following text in the output because the next
+   step depends on the server being up and running:
+   
    ```text
    Dev App Server is now running
    ```
+   
    (This runs the following command to start the local Datastore emulator:
    `gcloud beta emulators datastore start --project=<project-id>`. I'm not sure
-   why this command requires a project ID, but I guess it doesn't hurt to
+   why this command requires a project ID, but it doesn't hurt anything to
    provide it.)
    
-2. Run `yarn run dev`. This runs the following commands in order:
-   - `$(gcloud beta emulators datastore env-init)` sets necessary environment
-     variables
-   - `yarn serve` starts the node server
+   Leave this task running in this Terminal window.
+   
+2. In a new Terminal start the app development server:
+
+   ```sh
+   $(gcloud beta emulators datastore env-init)
+   ```
+   
+   IMPORTANT: YOU MUST EXECUTE THIS COMMAND DIRECTLY. You cannot run it via an
+   `npm` or `yarn` or `.sh` script because all variables set will be discarded
+   as soon as the script exits and not set globally.
+   
+3. Then start the node server:
+   
+   ```sh
+   yarn serve
+   ```
 
 
 ## Production

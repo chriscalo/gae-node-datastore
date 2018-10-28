@@ -50,7 +50,7 @@ function insertVisit (visit) {
 function getVisits () {
   const query = datastore.createQuery("visit")
     .order("timestamp", { descending: true })
-    .limit(10);
+    .limit(50);
   
   return datastore.runQuery(query)
     .then((results) => {

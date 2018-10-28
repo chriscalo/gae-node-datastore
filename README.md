@@ -84,7 +84,10 @@ yarn run dev
 
 This runs `scripts/dev.js`, which starts the Datastore emulator. Once it sees
 the output text `Dev App Server is now running`, it starts the app server via
-`yarn run serve`.
+`yarn run serve`, passing necessary enviroment variables for communicating with
+the Datastore emulator. We're using the `@google-cloud/datastore` library, so it
+automagically picks up those environment variables and uses them to connect to
+the emulator.
 
 
 ## Production

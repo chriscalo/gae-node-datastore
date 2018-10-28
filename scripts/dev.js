@@ -11,12 +11,10 @@ const Command = {
   DATASTORE_EMULATOR: oneLine`
     gcloud beta emulators datastore start --project=gae-node-datastore
   `,
-  
   // Returns environment variables to access Datastore emulator server.
   DATASTORE_EMULATOR_ENV: oneLine`
     gcloud beta emulators datastore env-init
   `,
-  
   // Starts app
   SERVE: oneLine`
     yarn run serve

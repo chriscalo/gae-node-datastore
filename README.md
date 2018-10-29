@@ -93,7 +93,7 @@ the emulator.
 
 ## Deploying to production
 
-### Production setup
+### Setup
 
 1. Create a project from the [GCP Console][gcp-console] and note the project ID.
 2. Install the `gcloud` command line tool.

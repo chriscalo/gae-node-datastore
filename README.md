@@ -91,9 +91,9 @@ automagically picks up those environment variables and uses them to connect to
 the emulator.
 
 
-## Production
+## Deploying to production
 
-### Setup
+### Production setup
 
 1. Create a project from the [GCP Console][gcp-console] and note the project ID.
 2. Install the `gcloud` command line tool.

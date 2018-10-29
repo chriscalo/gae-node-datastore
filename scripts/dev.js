@@ -29,7 +29,7 @@ function startEmulator() {
     
     emulator.stderr.on("data", (data) => {
       if (data.includes("Dev App Server is now running.")) {
-        // resolve with environment vars for communication with server
+        // resolve with environment vars for communication with local server
         resolve(
           shell.exec(Command.DATASTORE_EMULATOR_ENV, { silent: true })
             .split("\n")

@@ -2,7 +2,8 @@
 
 An example repo of a Node app running on Google App Engine Standard with
 Datastore (including the local emulator). This repo was tested to work both in
-production and in a local development environment.
+production and in a local development environment. But if you find problems,
+feel free to create an issue.
 
 ## Local development
 

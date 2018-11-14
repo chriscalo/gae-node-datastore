@@ -52,7 +52,7 @@ the method I recommend for the simplest, most reliable installation on a Mac:
    yarn --version
    ```
    
-3. Install the `Java 8+ JRE`. We'll again use Homebrew because, unlike other
+4. Install the `Java 8+ JRE`. We'll again use Homebrew because, unlike other
    methods, it just works.
    
    ```sh
@@ -64,6 +64,21 @@ the method I recommend for the simplest, most reliable installation on a Mac:
    ```sh
    java -version
    ```
+
+5. Install the `gcloud` command-line tool. The [installation instructions][gcloud-install]
+   list a confusing number of installation options. I recommend the no-fuss `curl`
+   method:
+   
+   ```sh
+   curl https://sdk.cloud.google.com | bash
+   ```
+   
+   Verify the installation with:
+   
+   ```sh
+   gcloud --version
+   ```
+
 
 ### Development setup
 
@@ -96,8 +111,7 @@ the emulator.
 ### Setup
 
 1. Create a project from the [GCP Console][gcp-console] and note the project ID.
-2. Install the `gcloud` command line tool.
-3. Sign in via `gcloud auth login`.
+2. Sign in via `gcloud auth login`.
 
 ### Deploy to GCP
 
@@ -109,3 +123,4 @@ the emulator.
 [gcp-console]: http://console.cloud.google.com/
 [node-download]: https://nodejs.org/en/download/
 [yarn-install]: https://yarnpkg.com/lang/en/docs/install/
+[gcloud-install]: https://cloud.google.com/sdk/docs/downloads-interactive

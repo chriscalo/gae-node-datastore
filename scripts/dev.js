@@ -7,7 +7,8 @@ const { oneLine } = require("common-tags");
 shell.echo("Starting development environment");
 
 const Command = {
-  // Starts local Datastore emulator. Not sure why, but project ID is required.
+  // Starts local Datastore emulator. Project ID can be anything and is used to
+  // persist state of the database across sessions.
   DATASTORE_EMULATOR: oneLine`
     gcloud beta emulators datastore start --project=gae-node-datastore
   `,

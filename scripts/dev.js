@@ -23,7 +23,7 @@ const Command = {
 };
 
 function startEmulator() {
-  // TODO: handle the case when the emulator fails to start
+  // TODO: handle case when emulator fails to start
   return new Promise((resolve, reject) => {
     // Start Datastore emulator
     const emulator = shell.exec(Command.DATASTORE_EMULATOR, { async: true });

@@ -20,6 +20,6 @@
   "devDependencies": {
     "common-tags": "^1.8.0",
     "nodemon": "^1.18.4",
-    "shelljs": "^0.8.2"
+    "shelljs": "^0.8.5"
   }
 }
